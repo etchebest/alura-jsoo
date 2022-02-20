@@ -3,7 +3,8 @@ import { Gerente } from "./Funcionario/Gerente.js";
 import { Diretor } from "./Funcionario/Diretor.js";
 import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
 
-const cliente1 = new Cliente("Cristian", 92976905053);
+const cliente1 = new Cliente("Cristian", 92976905053, "123123");
+
 
 const diretor = new Diretor('Cristian', 10000, 92976905053);
 diretor.cadastrarSenha("123456");
@@ -14,4 +15,6 @@ gerente.cadastrarSenha("1234");
 const logadoDir = SistemaAutenticacao.login(diretor, "123456");
 const logadoGer = SistemaAutenticacao.login(gerente, "1234");
 
-console.log(logadoDir, logadoGer);
+const logadoCliente = SistemaAutenticacao.login(cliente1, "123123");
+
+console.log(logadoDir, logadoGer, logadoCliente);
